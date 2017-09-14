@@ -1,0 +1,19 @@
+<view class="tab-right"> 
+    <view style="margin-top:25rpx;"  wx:for="{{apply}}"  data-id="{{item.id}}">
+        <text class="jie">申请时间：{{item.apply_time}}</text>
+        <view class="zhuan" wx:if="{{item.status==1}}">状态：已处理</view>
+         <view class="zhuan" wx:else>状态：未处理</view>
+      <view class="boxx">
+    <view class="riqi">联系人：{{item.name}}</view>
+        <view class="ri">联系电话：{{item.phone}}</view>
+             </view> 
+              <view class="button" data-id="{{item.id}}" >
+               <button bindtap="del" data-id="{{item.id}}">删除</button>
+              <button bindtap="detail" data-id="{{item.id}}" id="xiang">详情</button>
+
+
+             
+             </view>
+      </view> 
+</view> 
+

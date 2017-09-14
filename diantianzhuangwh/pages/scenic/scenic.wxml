@@ -1,0 +1,8 @@
+<view class="jingdian">
+  <image class="jin" src="../../image/jing.png"></image>
+  <text class="jindin">产品介绍</text>
+</view>
+<import src="../../wxParse/wxParse.wxml"/> 
+    <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>

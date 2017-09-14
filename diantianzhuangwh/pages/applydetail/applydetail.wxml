@@ -1,0 +1,191 @@
+<view class="register">
+<form bindsubmit="formDataCommit">
+<!-- <view class="classname">
+ <text>认证状态：</text>
+ <text wx:if="{{audit==0}}">未提交审核</text>
+ <text wx:elif="{{audit==1}}" style="color:red;">审核中</text>
+ <text wx:elif="{{audit==2}}" style="color:green;">已认证</text>
+ <text wx:elif="{{audit==3}}" style="color:red;">未通过</text>
+ <view>(理由/原因: )</view>
+</view> -->
+    <view class="user">
+        <text style="color:#000">业主单位：</text>
+        <input class="in" data-value="{{applyData.yezhu}}" name="yezhu"  bindinput="getyezhu" value="{{applyData.yezhu}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">物业单位：</text>
+        <input class="in" data-value="{{applyData.wuye}}" name="wuye"  bindinput="getwuye" value="{{applyData.wuye}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">项目名称：</text>
+        <input class="in" data-value="{{applyData.project_name}}" name="project_name"  bindinput="getproject" value="{{applyData.project_name}}"/>
+    </view>
+    <view class="user">
+        <text style="color:#000">联系人：</text>
+        <input class="in" data-value="{{applyData.name}}" name="name"  bindinput="getname" value="{{applyData.name}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">手机：+86</text>
+        <input class="in" data-value="{{applyData.phone}}" name="phone"  bindinput="getphone" value="{{applyData.phone}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">所属单位：</text>
+        <input class="in" data-value="{{applyData.danwei}}" name="danwei"  bindinput="getdanwei" value="{{applyData.danwei}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">电梯品牌/厂家：</text>
+        <input class="in" data-value="{{applyData.brand}}" name="brand"  bindinput="getbrand" value="{{applyData.brand}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">型号规格：</text>
+        <input class="in" data-value="{{applyData.spec}}" name="spec"  bindinput="getspec" value="{{applyData.spec}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">载重(kg)：</text>
+        <input class="in" data-value="{{applyData.heavier}}" name="heavier"  bindinput="getheavier" value="{{applyData.heavier}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">速度(m/s)：</text>
+        <input class="in" data-value="{{applyData.speed}}" name="speed"  bindinput="getspeed" value="{{applyData.speed}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">层/站/门：</text>
+        <input class="in" data-value="{{applyData.floor}}" name="floor"  bindinput="getfloor" value="{{applyData.floor}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">台数：</text>
+        <input class="in" data-value="{{applyData.num}}" name="num"  bindinput="getnum" value="{{applyData.num}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">投用时间：</text>
+        <picker mode="date" value="{{applyData.addtime}}" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{addtime!=''?addtime:applyData.addtime}}
+    </view>
+  </picker>
+    </view>
+     <view class="user">
+        <text style="color:#000">电梯安全管理员姓名：</text>
+        <input class="in" data-value="{{applyData.master_name}}" name="master_name"  bindinput="getmasterName" value="{{applyData.master_name}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">管理员证件号码：</text>
+        <input class="in" data-value="{{applyData.master_num}}" name="master_num"  bindinput="getmasterNum" value="{{applyData.master_num}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">管理员手机号：+86</text>
+        <input class="in" data-value="{{applyData.master_phone}}" name="master_phone"  bindinput="getmasterPhone" value="{{applyData.master_phone}}"/>
+    </view>
+
+   
+     <view class="user">
+        <text style="color:#000">电梯维保特殊要求：</text>
+    </view>
+    <view class="textarea">
+         <textarea data-value="{{applyData.special}}" name="special"  bindinput="getspecial" value="{{applyData.special}}" style="border:1px solid #ccc;width:100%;padding-left:20rpx;"/> 
+    </view>
+     <view class="user">
+        <text style="color:#000">原维护单位：</text>
+        <input class="in" data-value="{{applyData.old_weihu}}" name="old_weihu"  bindinput="getoldWeihu" value="{{applyData.old_weihu}}"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">维护截止时间：</text>
+        <picker mode="date" value="{{applyData.endtime}}" bindchange="bindDateChange2">
+    <view class="picker">
+      当前选择: {{endtime!=''?endtime:applyData.endtime}}
+    </view>
+  </picker>
+    </view>
+     <view class="user">
+        <text style="color:#000">梯况简要描述：</text>
+    </view>
+    <view>
+        <textarea data-value="{{applyData.content}}" name="content"  bindinput="getcontent" value="{{applyData.content}}" style="border:1px solid #ccc;width:100%;padding-left:20rpx;"/>
+    </view>
+     <view class="user">
+        <text style="color:#000">电梯出厂合格证：</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+        <radio name="hege" value="1" checked="{{applyData.hege==1?true:''}}"/>有
+        <radio name="hege" value="0" checked="{{applyData.hege==0?true:''}}"/>无
+        <radio name="hege" value="2" checked="{{applyData.hege==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+     <view class="user">
+        <text style="color:#000">电梯注册使用登记证：</text>
+        <radio-group class="radio-group" bindchange="radioChange2">
+        <radio name="register" value="1" checked="{{applyData.register==1?true:''}}"/>有
+        <radio name="register" value="0" checked="{{applyData.register==0?true:''}}"/>无
+        <radio name="register" value="2" checked="{{applyData.register==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+     <view class="user">
+        <text style="color:#000">电气原理图：</text>
+        <radio-group class="radio-group" bindchange="radioChange3">
+        <radio name="yuanli" value="1" checked="{{applyData.yuanli==1?true:''}}"/>有
+        <radio name="yuanli" value="0" checked="{{applyData.yuanli==0?true:''}}" />无
+        <radio name="yuanli" value="2" checked="{{applyData.yuanli==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+     <view class="user">
+        <text style="color:#000">安装使用维护说明书：</text>
+        <radio-group class="radio-group" bindchange="radioChange4">
+        <radio name="shuoming" value="1" checked="{{applyData.shuoming==1?true:''}}"/>有
+        <radio name="shuoming" value="0" checked="{{applyData.shuoming==0?true:''}}"/>无
+        <radio name="shuoming" value="2" checked="{{applyData.shuoming==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">安全部件型式试验报告及调试证书：</text>
+        <radio-group class="radio-group" bindchange="radioChange5">
+        <radio name="component" value="1" checked="{{applyData.component==1?true:''}}"/>有
+        <radio name="component" value="0" checked="{{applyData.component==0?true:''}}"/>无
+        <radio name="component" value="2" checked="{{applyData.component==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">监督检验报告及检验合格标志：</text>
+        <radio-group class="radio-group" bindchange="radioChange6">
+        <radio name="supervision" value="1" checked="{{applyData.supervision==1?true:''}}"/>有
+        <radio name="supervision" value="0" checked="{{applyData.supervision==0?true:''}}"/>无
+        <radio name="supervision" value="2" checked="{{applyData.supervision==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">定期检验报告及检验合格标志：</text>
+        <radio-group class="radio-group" bindchange="radioChange7">
+        <radio name="regular" value="1" checked="{{applyData.regular==1?true:''}}"/>有
+        <radio name="regular" value="0" checked="{{applyData.regular==0?true:''}}"/>无
+        <radio name="regular" value="2" checked="{{applyData.regular==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">电梯井道土建布置图：</text>
+        <radio-group class="radio-group" bindchange="radioChange8">
+        <radio name="plan" value="1" checked="{{applyData.plan==1?true:''}}"/>有
+        <radio name="plan" value="0" checked="{{applyData.plan==0?true:''}}"/>无
+        <radio name="plan" value="2" checked="{{applyData.plan==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">设备管理制度、应急救援预案等：</text>
+        <radio-group class="radio-group" bindchange="radioChange9">
+        <radio name="save" value="1" checked="{{applyData.save==1?true:''}}"/>有
+        <radio name="save" value="0" checked="{{applyData.save==0?true:''}}"/>无
+        <radio name="save" value="2" checked="{{applyData.save==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+    <view class="user">
+        <text style="color:#000">其他：</text>
+        <radio-group class="radio-group" bindchange="radioChange10">
+        <radio name="qita" value="1" checked="{{applyData.qita==1?true:''}}"/>有
+        <radio name="qita" value="0" checked="{{applyData.qita==0?true:''}}"/>无
+        <radio name="qita" value="2" checked="{{applyData.qita==2?true:''}}"/>其他
+        </radio-group>
+    </view>
+ 
+
+<view class="but">
+    <button  form-type="submit" disabled="{{disabled}}" style="color:#000">      更改申请     </button>
+</view>
+</form>
+</view>

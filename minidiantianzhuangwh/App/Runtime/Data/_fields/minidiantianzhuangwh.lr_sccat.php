@@ -1,0 +1,1 @@
+a:9:{i:0;s:2:"id";i:1;s:4:"name";i:2;s:7:"photo_x";i:3;s:7:"addtime";i:4;s:7:"shop_id";i:5;s:4:"type";i:6;s:4:"sort";s:3:"_pk";s:2:"id";s:5:"_type";a:7:{s:2:"id";s:16:"int(11) unsigned";s:4:"name";s:12:"varchar(100)";s:7:"photo_x";s:12:"varchar(255)";s:7:"addtime";s:7:"int(11)";s:7:"shop_id";s:16:"int(11) unsigned";s:4:"type";s:10:"tinyint(4)";s:4:"sort";s:7:"int(11)";}}

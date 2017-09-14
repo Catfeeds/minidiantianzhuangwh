@@ -1,0 +1,15 @@
+<view class="tab-right"> 
+    <view >
+      <view class="boxx" wx:for="{{store_list}}" bindtap="qiye" data-id="{{item.id}}">
+            <view class="png">
+                    <image src="{{item.logo}}"></image>
+                  </view>
+                 <view class="fon">
+                        {{item.name}}
+                  </view>
+        <view class="riqi">主营：{{item.main_hy}}</view>
+
+             </view> 
+      <view class="clear mt10" bindtap="getMore">点击查看更多</view>        
+      </view> 
+</view> 
